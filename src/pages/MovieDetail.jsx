@@ -1,4 +1,10 @@
 import React, { useState, useEffect } from "react";
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  Typography,
+} from "@material-tailwind/react";
 import { useParams } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import axios from "axios";
@@ -36,20 +42,26 @@ const MovieDetail = () => {
   return (
     <>
       <Sidebar />
-      <div className="container w-2/4 mx-auto">
-        <h1 className="p-5 text-4xl font-bold">Detail Movie</h1>
-        <div
-          className="flex justify-between px-5 py-5 m-5 rounded shadow-md"
-          key={movie.id}
-        >
-          <img src={`${URL_PATH}${movieId}`} alt="movie-picture" />
-          <div className="ml-5">
-            <h1 className="text-3xl font-bold text-left">{movie.title}</h1>
-            <h4 className="mt-3 text-lg">Avg Vote: {movie.vote_average}</h4>
-            <p className="mt-3">{movie.overview}</p>
-            <p className="mt-3 text-lg">Tagline: {movie.tagline}</p>
-          </div>
-        </div>
+      <div className="p-4 sm:ml-64">
+        <Card className="w-96">
+          <CardHeader floated={false} className="h-80">
+            <img src={`${URL_PATH}${movieId}`} alt="movie-picture" />
+          </CardHeader>
+          <CardBody className="text-center">
+            <Typography variant="h4" color="blue-gray" className="mb-2">
+              {movie.title}
+            </Typography>
+            <Typography color="blue" className="font-medium" textGradient>
+              {movie.vote_average}
+            </Typography>
+            <Typography variant="h6" color="black" className="mb-2">
+              {movie.overview}
+            </Typography>
+            <Typography variant="h6" color="black" className="mb-2">
+              {movie.tagline}
+            </Typography>
+          </CardBody>
+        </Card>
       </div>
     </>
   );
