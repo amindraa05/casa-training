@@ -41,7 +41,7 @@ const Upcoming = () => {
         <Fragment>
           <Typography variant="h2">Upcoming Movies</Typography>
         </Fragment>
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-4 ">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4">
           {movies.map((movie) => (
             <MovieCards
               key={movie.id}
