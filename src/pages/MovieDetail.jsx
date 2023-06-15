@@ -42,7 +42,7 @@ const MovieDetail = () => {
           className="flex justify-between px-5 py-5 m-5 rounded shadow-md"
           key={movie.id}
         >
-          <img src={`${URL_PATH}${url}`} alt="movie-picture" />
+          <img src={`${URL_PATH}${movieId}`} alt="movie-picture" />
           <div className="ml-5">
             <h1 className="text-3xl font-bold text-left">{movie.title}</h1>
             <h4 className="mt-3 text-lg">Avg Vote: {movie.vote_average}</h4>
