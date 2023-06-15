@@ -32,7 +32,7 @@ const NowPlaying = () => {
 
   useEffect(() => {
     getNowPlaying();
-  }, []);
+  }, [movies]);
 
   return (
     <>

@@ -44,6 +44,7 @@ const Upcoming = () => {
         <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4">
           {movies.map((movie) => (
             <MovieCards
+              id={movie.id}
               key={movie.id}
               url={movie.poster_path}
               title={movie.title}

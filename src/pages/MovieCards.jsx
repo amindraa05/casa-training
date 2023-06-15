@@ -15,7 +15,7 @@ const MovieCards = ({ id, url, title, date }) => {
         <CardHeader floated={false} className="h-80">
           <img src={`${URL_PATH}${url}`} alt="movie-picture" />
         </CardHeader>
-        <Link to={`/moviedetail/${id}`} state={{ id, url, title, date }}>
+        <Link to={`${id}`}>
           <CardBody className="text-center">
             <Typography variant="h4" color="blue-gray" className="mb-2">
               {title}

@@ -10,11 +10,13 @@ import Upcoming from "./pages/Upcoming";
 import Navbar from "./components/Navbar";
 import MainNavbar from "./components/MainNavbar";
 import MovieDetail from "./pages/MovieDetail";
+import { Provider } from "react-redux";
+import App from "./App";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <App />,
   },
   {
     path: "/nowplaying",
@@ -29,17 +31,34 @@ const router = createBrowserRouter([
     element: <Upcoming />,
   },
   {
-    path: "/moviedetail/:id",
+    path: "nowplaying/:idmovie",
+    element: <MovieDetail />,
+  },
+  {
+    path: "popular/:idmovie",
+    element: <MovieDetail />,
+  },
+  {
+    path: "upcoming/:idmovie",
     element: <MovieDetail />,
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <ThemeProvider>
-      {/* <MainNavbar /> */}
-      <Navbar />
-      <RouterProvider router={router} />
-    </ThemeProvider>
-  </React.StrictMode>
+  <ThemeProvider>
+    {/* <MainNavbar /> */}
+    <Navbar />
+    <RouterProvider router={router} />
+  </ThemeProvider>
 );
+
+// ReactDOM.createRoot(document.getElementById("root")).render(
+//   <React.StrictMode>
+//     <Provider store={store}>
+//     <ThemeProvider>
+//       <Navbar />
+//       <RouterProvider router={router} />
+//     </ThemeProvider>
+//     </Provider>
+//   </React.StrictMode>
+// );
